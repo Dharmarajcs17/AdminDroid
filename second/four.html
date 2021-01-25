@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square {
+            height: 50px;
+            width: 50px;
+        }
+
+        .rectangle {
+            height: 15px;
+            width: 100px;
+        }
+
+        .circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .oval {
+            height: 20px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .square,
+        .rectangle,
+        .circle,
+        .oval {
+            margin-bottom: 5px;
+            margin-left: 5px;
+            ;
+        }
+
+        .head {
+            margin-bottom: 2px;
+        }
+
+        .card {
+            width: fit-content;
+            padding: 30px;
+            padding-bottom: 50px;
+            border: 1px solid grey;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .main {
+            width: fit-content;
+            margin: 50px;
+            padding: 30px;
+            box-shadow: 0px 0px 8px grey;
+        }
+
+        #drawButton {
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 2px;
+            margin-left: 50px;
+        }
+
+        #shapes,
+        #drawButton,
+        #sColor,
+        #sSize {
+            padding: 10px;
+        }
+
+        .sColor {
+            padding: 100px;
+        }
+
+        .line1,
+        .line2,
+        .line4 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .line1>div,
+        .line4>div {
+            width: fit-content;
+            padding: 10px;
+        }
+
+        .line2>div {
+            padding: 10px;
+        }
+
+        .line3>div {
+            width: fit-content;
+            padding: 10px;
+            margin-left: 180px;
+
+        }
+
+        .line1>div,
+        .line2>div,
+        .line3>div,
+        .line4>div {
+            width: 200px;
+        }
+
+        .info {
+            padding: 10px;
+            padding-bottom: 40px;
+        }
+
+        span {
+            margin-right: 20px;
+        }
+
+        #ShapeDesign {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .countDiv {
+            padding: 20px;
+        }
+    </style>
+    <script>
+        var total = 0;
+        function checkk() {
+            var checkStatus = document.getElementById("check").checked;
+            if (checkStatus) {
+                document.getElementById("ShapeDesign").style = "flex-direction: row";
+            }
+            else {
+                document.getElementById("ShapeDesign").style = "flex-direction: column";
+            }
+        }
+        function drawShape() {
+            var selectedShape = document.getElementById("shapes").value;
+            var selectedColor = document.getElementById("sColor").value;
+            var selectedSize = parseInt(document.getElementById("sSize").value);
+            if (selectedShape == "Square") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "square " + selectedColor);
+                element.setAttribute("style", "height: " + selectedSize + "px; width: " + selectedSize + "px;");
+                element.setAttribute("id", "" + total)
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            // rectange
+            if (selectedShape == "Rectangle") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "rectangle" + " " + selectedColor);
+                element.setAttribute("style", "width: " + selectedSize + "px;");
+                element.setAttribute("id", "" + total)
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            // circle
+            if (selectedShape == "Circle") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "circle" + " " + selectedColor);
+                element.setAttribute("style", "height: " + selectedSize + "px; width: " + selectedSize + "px;");
+                element.setAttribute("id", "" + total)
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            // oval
+            if (selectedShape == "Oval") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "oval" + " " + selectedColor);
+                element.setAttribute("style", "width: " + selectedSize + "px;");
+                element.setAttribute("id", "" + total)
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            total++;
+            document.getElementById("total").innerHTML = "" + total;
+            console.log(total);
+        }
+        function clearShape() {
+            for (let i = 0; i < total; i++) {
+                document.getElementById("" + i).remove();
+            }
+            total = 0
+            document.getElementById("total").innerHTML = "" + total;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="top">
+            <h4>Personal Information</h4>
+            <div class="info">
+                <span>Name <span></span>DHARMARAJ M</span></span></span>
+                <span>College <span></span>BANNARI AMMAN INSTITUTE OF TECHNOLOGY</span></span></span>
+                <span>Dept <span></span>CSE</span></span></span>
+                <span>Email <span></span>MDHARMARAJ1313@gmail.com</span></span></span>
+                <span>Phone <span></span>9500792599</span></span></span>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="card">
+                <h4 class="head">
+                    Rendering Custom Shapes
+                </h4>
+                <div class="details">
+                    <div class="line1">
+                        <div>
+                            Select Shape
+                        </div>
+                        <div class="selectshape">:
+                            <select name="shapes" id="shapes">
+                                <option value="Square">Square</option>
+                                <option value="Rectangle">Rectangle</option>
+                                <option value="Circle">Circle</option>
+                                <option value="Oval">Oval</option>
+                            </select>
+                        </div>
+                    </div>
+                    <class class="line2">
+                        <div>
+                            Select Background Color
+                        </div>
+                        <div class="shapeColor">:
+                            <select name="shapesColor" id="sColor">
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
+                                <option value="yellow">Yellow</option>
+                            </select>
+                        </div>
+                    </class>
+                    <class class="line4">
+                        <div>
+                            Select Size
+                        </div>
+                        <div class="shapeSize">:
+                            <select name="shapesSize" id="sSize">
+                                <option value="25">25px</option>
+                                <option value="50">50px</option>
+                                <option value="75">75px</option>
+                                <option value="100">100px</option>
+                            </select>
+                        </div>
+                    </class>
+                    <div class="line3">
+                        <div>
+                            <button id="drawButton" onclick="drawShape()">Draw</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="check-box">
+                    <input type="checkbox" id="check" onclick="checkk()" name="horizontal"> Draw shapes in a horizontal
+                    view.
+                </div>
+                <div class="countDiv">
+                    Total Rendered Shapes: <span id="total"> 0 </span>
+                    <button id="clearButton" onclick="clearShape()">Clear Results</button>
+                </div>
+                <h4 class="tail">
+                    Result
+                </h4>
+                <div id="ShapeDesign">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

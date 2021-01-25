@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Name :DHARMARAJ M -->
+    <!-- College :BANNARI AMMAN INSTITUTE OF TECHNOLOGY -->
+    <!-- Dept : COMPUTER SCIENCE AND ENGINEERING -->
+    <!-- Email : MDHARMARAJ1313@gmail.com -->
+    <!-- Phone : 9500792599 -->
+    <title>License Details</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <style>
+        h3 {
+            color: #009900;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        .container {
+            width: 65%;
+            margin: auto;
+            padding: 5%;
+        }
+
+        .viewdiv {
+            padding: 5%;
+            background-color: white;
+        }
+
+        .hiddendiv {
+            padding: 5%;
+            background-color: white;
+        }
+
+        .mid {
+            padding: 2%;
+            background-color: #f4f5f5;
+        }
+
+        button {
+            color: white;
+            background-color: #009900;
+        }
+
+        .v-center {
+            margin: auto;
+        }
+
+        .main-blk {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .blk {
+            color: #009900;
+            background-color: white;
+            margin-right: 3%;
+            padding: 1%;
+            text-align: right;
+            width: 25%;
+            border-left-style: solid;
+            border-radius: 10%;
+            border-color: #009900;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="viewdiv">
+            <div class="top">
+                <h3>License Details</h3>
+                <hr style="height: 2px; border-width: 0; color: #009900; background-color: #009900;">
+            </div>
+            <div class="mid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p>Licensed to</p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <p>:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p>admindroid.com</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p>Licensed status</p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <p>:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p><b>Active</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 v-center">
+                        Purchased packs
+                    </div>
+                    <div class="col-md-1 text-right v-center">
+                        :
+                    </div>
+                    <div class="col-md-8 main-blk">
+                        <div class="blk">
+                            <div>Report Pack</div>
+                            <div><b>300</b></div>
+                            <div>Users</div>
+                        </div>
+                        <div class="blk">
+                            <div>Audit Pack</div>
+                            <div><b>300</b></div>
+                            <div>Users</div>
+                        </div>
+                        <div class="blk">
+                            <div>Admin Pack</div>
+                            <div><b>300</b></div>
+                            <div>Admins</div>
+                        </div>
+                        <div class="blk">
+                            <div>Tenant Packs</div>
+                            <div><b>300</b></div>
+                            <div>Tenants</div>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p>Expiry date</p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <p>:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p>in a year <span style="color: gray">(March 25th, 2022)</span></p>
+                    </div>
+                </div>
+            </div><br>
+            <div class="bottom">
+                <div class="row">
+                    <div class="col-md-12 text-right according">
+                        <a href="#" onclick="myFunction('hidden')" style="color: grey;">Renew/Upgrade License</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hiddendiv w3-hide" id="hidden">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <hr style="height: 1px;">
+                    <p>Your remaining licence term(470 days)will be carried forward when you renew.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <button>Renew License Now</button>
+                </div>
+                <div class="col-md-6 text-left">
+                    <button>Upgrade Licence Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+</body>
+
+</html>

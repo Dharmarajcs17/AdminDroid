@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .square {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+        }
+    </style>
+    <script>
+        function drawShape() {
+            var selectedShape = document.getElementById("shapes").value;
+            if (selectedShape == "Square") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "square");
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+
+                var squaresCount = document.getElementsByClassName("square");
+                document.getElementById("total").value = squaresCount.length;
+            }
+        }		
+    </script>
+</head>
+
+<body>
+
+    <h5>Name :---</h5>
+    <h5>College :---</h5>
+    <h5>Dept :---</h5>
+    <h5>Email :---</h5>
+    <h5>Phone :---</h5>
+
+    <h2> Script Question </h2>
+    <div>Select Shape :
+        <select name="shapes" id="shapes">
+            <option value="Square">Square</option>
+            <option value="Rectangle">Rectangle</option>
+            <option value="Circle">Circle</option>
+            <option value="Oval">Oval</option>
+        </select>
+        <button onclick="drawShape()">Draw Shape</button>
+        <div style="padding-top:10px; padding-bottom:10px">Total Shapes Available:
+            <input type="text" id="total" size="2" value="1" />
+        </div>
+        <div style="padding-top:10px; padding-bottom:10px">Enter the position to remove: <input type="text"
+                id="position" value="1" size="2" /> <button> Remove Shape</button></div>
+        <div id="ShapeDesign">
+            <div class="square"></div>
+            <div>&nbsp;</div>
+        </div>
+
+</body>
+
+</html>

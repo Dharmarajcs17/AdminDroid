@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="License Details Portal">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<title>License Details page</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<!-- script funtion -->
+	<script type="text/javascript">
+		function myfunction(id) {
+  			var x = document.getElementById(id);
+  			if (x.className.indexOf("w3-show") == -1) {
+   				x.className += " w3-show";
+  			}
+  			else {
+  				x.className = x.className.replace(" w3-show", "");
+  			}
+		}
+		
+	</script>
+	<style type="text/css">
+		.main{
+			padding: 3%;
+			padding-bottom: 0px;
+			font-size: 12px;
+			background-color: white;
+			margin-left: 20%;
+			margin-right: 20%;
+			margin-top: 1%;
+			
+		}
+		.table{
+            padding: 20px;
+
+            background-color: #dce0e6;
+            color: #6b6e73;
+            font-size: 12px;
+        }
+        .main-block{
+        	display: flex;
+        	flex-direction: row;
+        }
+        .block{
+        	margin: 1px;
+        	margin-left: 5px;
+        	padding: 10px;
+        	border-left: 3px solid green;
+        	border-radius: 10px;
+        	color: green;
+        	background-color: white;
+        	text-align: right;
+        	width: 115px;
+        	height: 1%;
+
+        }
+        .title{
+        	color:  green;
+        	padding-left: 3%;
+        }
+        .line1{
+        	border-bottom:  3px solid green;
+        }
+        .btn{
+        	text-decoration: underline;
+        }
+        .upgradation{
+        	text-align: right;
+        	padding-bottom: 5px;
+        	padding-top: 20px;
+        	cursor: pointer;
+        }
+        #hide{
+        	padding-bottom: 40px;
+        }
+        .hidecolor{
+        	color: #6b6e73;
+        }
+	</style>
+</head>
+
+
+<body bgcolor=#f0f8ff>
+	<div class="main">
+		<div class="title line1">
+			<h1>License Details</h1>
+		</div>
+		
+		<br>
+		<div class="table">
+			<table style="text-align: left;">
+				<tr>
+					<th>Licensed to</th>
+					<th>:</th>
+					<th>adminroid.com</th>
+				</tr>
+				<br>
+				<tr>
+					<th>License status</th>
+					<th>:</th>
+					<th style="color: #54575c;">Active</th>
+				</tr>
+				<tr>
+					<th>Purchase packs</th>
+					<th>:</th>
+					<th>
+						<div class="main-block">
+							<div class="block">
+								<div>Report pack</div>
+								<div>300</div>
+								<div>Users</div>
+							</div>
+							<div class="block">
+								<div>Audit pack</div>
+								<div>300</div>
+								<div>Users</div>
+							</div>
+							<div class="block">
+								<div>Admin pack</div>
+								<div>10</div>
+								<div>Admins</div>
+							</div>
+							<div class="block">
+								<div>Tenant pack</div>
+								<div>5</div>
+								<div>Tenants</div>
+							</div>
+						</div>
+					</th>
+				</tr>
+				<tr>
+					<th>Expiry date</th>
+					<th>:</th>
+					<th>in a year <span style="color:rgb(142,141,143) ">(March 25th, 2022)</span></th>
+				</tr>
+			</table>
+		</div>
+
+		<!-- button -->
+			<div class="upgradation">
+				<div onclick="myfunction('hide')" class="btn">
+					Renew/Upgrade License	
+				</div>
+			</div>
+
+			<!-- hidden details -->
+			<div id="hide" class="hidden w3-hide " >
+				<hr>
+				<center>
+					<p class="hidecolor">Your remaining licence term(470 days)will be carried forward when you renew.
+					</p>
+				</center>
+				<center>
+				<button class="w3-green w3-btn">
+					Renew License Now
+				</button>&nbsp;
+				<button class="w3-green w3-btn">
+					Upgrade Licence Now
+				</button>
+				</center>
+			</div>	
+	</div>
+
+</body>
+</html>

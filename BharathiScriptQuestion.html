@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .square {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            margin: 10px;
+        }
+
+        .rectangle {
+            height: 50px;
+            width: 100px;
+            background-color: #555;
+            margin: 10px;
+        }
+
+        .circle {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .oval {
+            height: 50px;
+            width: 100px;
+            background-color: #555;
+            border-radius: 50%;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        var i = 0;
+        function drawShape() {
+            var totalcount = 0;
+            var selectedShape = document.getElementById("shapes").value;
+            // squre
+            if (selectedShape == "Square") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "square");
+                element.setAttribute("id", ++i);
+
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            // rectange
+            if (selectedShape == "Rectangle") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "rectangle");
+                element.setAttribute("id", ++i);
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            // circle
+            if (selectedShape == "Circle") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "circle");
+                element.setAttribute("id", ++i);
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            // oval
+            if (selectedShape == "Oval") {
+                var element = document.createElement("div");
+                element.setAttribute("class", "oval");
+                element.setAttribute("id", ++i);
+                var shapeDesign = document.getElementById("ShapeDesign");
+                shapeDesign.append(element);
+
+                // shapeDesign.innerHTML = shapeDesign.innerHTML + "<div> &nbsp </div>";
+            }
+            totalcount = parseInt(document.getElementById("total").value);
+            totalcount += 1;
+            document.getElementById("total").value = totalcount;
+        }
+        function removeShape() {
+            var myobj = document.getElementById(document.getElementById("position").value);
+            myobj.remove();
+            document.getElementById("total").value = parseInt(document.getElementById("total").value) - 1;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h5>Name :DHARMARAJ M </h5>
+    <h5>College :BANNARI AMMAN INSTITUTE OF TECHNOLOGY</h5>
+    <h5>Dept : COMPUTER SCIENCE AND ENGINEERING</h5>
+    <h5>Email : MDHARMARAJ1313@gmail.com</h5>
+    <h5>Phone : 9500792599</h5>
+
+    <h2> Script Question </h2>
+    <div>Select Shape :
+        <select name="shapes" id="shapes">
+            <option value="Square">Square</option>
+            <option value="Rectangle">Rectangle</option>
+            <option value="Circle">Circle</option>
+            <option value="Oval">Oval</option>
+        </select>
+        <button onclick="drawShape()">Draw Shape</button>
+        <div style="padding-top:10px; padding-bottom:10px">Total Shapes Available: <input type="text" id="total"
+                size="10" value="0" /></div>
+        <div style="padding-top:10px; padding-bottom:10px">Enter the position to remove: <input type="text"
+                id="position" value="1" size="2" /> <button onclick="removeShape()"> Remove Shape</button></div>
+        <div id="ShapeDesign">
+
+        </div>
+
+</body>
+
+</html>

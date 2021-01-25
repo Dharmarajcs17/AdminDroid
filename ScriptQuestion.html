@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .square {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+        }
+        
+        .rectangle {
+            height: 50px;
+            width: 100px;
+            background-color: #555;
+        }
+        
+        .circle {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius: 50%;
+        }
+        
+        .oval {
+            height: 50px;
+            width: 100px;
+            background-color: #555;
+            border-radius: 50%;
+        }
+        
+        .count {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function drawShape() {
+            var selectedShape = document.getElementById("shapes").value;
+            var index = document.getElementsByClassName("count").length;
+            var element = document.createElement("div");
+            element.setAttribute("class", selectedShape + " count");
+            element.setAttribute("id", parseInt(index) + 1);
+            var shapeDesign = document.getElementById("ShapeDesign");
+            shapeDesign.append(element);
+
+            var shapeCount = document.getElementsByClassName("count");
+            document.getElementById("total").value = shapeCount.length;
+
+        }
+
+        function removeShape() {
+            var index = document.getElementById("position").value;
+            console.log(index)
+            var ln = document.getElementsByClassName("count").length;
+
+            if (parseInt(index) <= ln && parseInt(index) >= 0) {
+                // remove the particular element
+                var myobj = document.getElementById(index)
+                myobj.remove();
+
+                for (var i = parseInt(index) + 1; i <= ln; i++) {
+                    document.getElementById(i + "").setAttribute('id', (i - 1) + "");
+                    console.log(i);
+                }
+
+                // decrement the total value by 1 
+                var total = document.getElementById("total").value;
+                document.getElementById("total").value = total - 1;
+
+            } else {
+                window.alert("sorry no shapes with such index");
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h5>Name :---</h5>
+    <h5>College :---</h5>
+    <h5>Dept :---</h5>
+    <h5>Email :---</h5>
+    <h5>Phone :---</h5>
+
+    <h2> Script Question </h2>
+    <div>Select Shape :
+        <select name="shapes" id="shapes">
+            <option value="square">Square</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="circle">Circle</option>
+            <option value="oval">Oval</option>
+        </select>
+        <button onclick="drawShape()">Draw Shape</button>
+        <div style="padding-top:10px; padding-bottom:10px">Total Shapes Available: <input type="text" id="total" size="2" value="0" /></div>
+        <div style="padding-top:10px; padding-bottom:10px">Enter the position to remove: <input type="text" id="position" value="1" size="2" /> <button onclick="removeShape()"> Remove Shape</button></div>
+        <div id="ShapeDesign">
+        </div>
+
+</body>
+
+</html>
